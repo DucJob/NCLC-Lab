@@ -18,8 +18,5 @@ abstract class Polygon {
     abstract public function Perimeter();
     abstract public function Area();
 }
-$Sides = [3,7,5];
-$Triangle = new Triangle($Sides);
-echo "Chu vi tam giác:" . $Triangle->Perimeter(). ",\n";
-echo "Diện tích tam giác:" . $Triangle->Area(). "\n";
+
 ?>
