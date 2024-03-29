@@ -1,27 +1,33 @@
 <?php
-class Triangle extends Polygon {
+// include("Views/Index.php");
+class triangle extends polygon {
     public $triHeight;
 
-    public function __construct($Sides) {
-        parent::__construct($Sides);
+    public function __construct() {
+        parent::__construct(3);
+        // $this-> bottomEdge = $side[0];
+        // $this-> sidea = $side[1];
+        // $this-> sideb = $side[2];
     }
 
-    public function Perimeter() {
-        $Sides1= $this -> Sides1;
-        $Sides2= $this -> Sides2;
-        $Sides3= $this -> Sides3;
-        return $Sides1 + $Sides2 + $Sides3;
+    public function getSides($Sides) {
+        
+    }   
+
+    // public function getSides($Sides) {
+    //     return
+    // }  
+
+    public function perimeter() {
+       return $this->side[0] + $this->side[1] + $this->side[2];
     }
 
-    public function Area() {
-        $a = $this -> Sides3;
+    public function area() {
+        $a = $this-> side[2];
         $triHeight = $this -> triHeight;
         return (1/2) * $a * $triHeight;
     }
 
 }
-$Sides = [3,7,5];
-$Triangle = new Triangle($Sides);
-echo "Chu vi tam giác:" . $Triangle->Perimeter(). ",\n";
-echo "Diện tích tam giác:" . $Triangle->Area(). "\n";
+
 ?>

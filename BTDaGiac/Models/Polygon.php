@@ -1,13 +1,18 @@
 <?php 
-require 'Models/Square.php';
-abstract class Polygon {
-    protected $Sides;
+
+abstract class polygon {
+    protected $side;
     // protected $numberSides;
 
-    public function __construct($Sides){
-        $this->Sides = $Sides;
-        // $this->Sides = array();
+    public function __construct($side){
+        // $this->Sides = $Sides;
+        $this->side = array();
+        // $this->numberSides = $numberSides;
         
+    }
+
+    public function set($side) {
+        $this->side[] = $side;
     }
 
     // public function setSides($Height, $Weight){
@@ -15,8 +20,8 @@ abstract class Polygon {
     //     $this-> Weight = $Weight;
     // }
 
-    abstract public function Perimeter();
-    abstract public function Area();
+    abstract public function perimeter();
+    abstract public function area();
 }
 
 ?>

@@ -1,23 +1,19 @@
 <?php 
 include 'Models/Polygon.php';
-class Square extends Polygon{
-    public function __construct($Sides){
-        parent::__construct($Sides);   
+class square extends polygon{
+    public function __construct(){
+        parent::__construct(1);  
+    }
+    
+    public function perimeter(){
+        $side= $this -> side;
+        return 4 * $side;
     }
 
-    public function Perimeter(){
-        $Sides= $this -> Sides;
-        return 4 * $Sides;
-    }
-
-    public function Area() {
-        $Sides= $this -> Sides;
-        return pow($Sides,2);
+    public function area() {
+        $side= $this -> side;
+        return pow($side,2);
     }
 }
 
-$Sides = [6,6,6,6];
-$Square = new Square($Sides);
-echo "Chu vi hình vuông:". $Square->Perimeter() . ",\n";
-echo "Diện tích hình vuông:". $Square->Area(). ",\n";
 ?>
