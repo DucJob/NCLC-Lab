@@ -62,25 +62,40 @@
   function getvalue(e) {
     document.getElementById("input").value = e.hidden.value
 }
+
+const soCanhInput = document.getElementById('so-canh');
+    const nhapCanhDiv = document.getElementById('nhap-canh');
+
+    soCanhInput.addEventListener('change', () => {
+        const soCanh = soCanhInput.value;
+        nhapCanhDiv.innerHTML = '';
+        for (let i = 0; i < soCanh; i++) {
+            nhapCanhDiv.innerHTML += `
+                <label for="canh-${i}">Cạnh ${i + 1}:</label>
+                <input type="number" name="canh-${i}" id="canh-${i}" required>
+                <br><br>
+            `;
+        }
+    });
 </script>
 <!-- Note: Sử dụng Explode Function để nhận giá trị mảng  -->
 <?php 
 // include("Controllers/Invalidate.php");
 $input  = $_POST['intri'];
 $input_arr = explode(" ", $input);
-echo $input_arr[0]; 
-echo $input_arr[1];
-echo $input_arr[2];
-echo $input_arr[3];
+echo $side[0]; 
+echo $side[1];
+echo $side[2];
+echo $triHeight;
 
 $input  = $_POST['insqua'];
 $input_arr = explode(" ", $input);
-echo $input_arr[0];
+echo $side;
 
 $input  = $_POST['inrec'];
 $input_arr = explode(" ", $input);
-echo $input_arr[0]; 
-echo $input_arr[1];
+echo $height; 
+echo $width;
 
 if (isset($perimeter) && isset($area)) {
   echo "<h2>Kết quả</h2>";
